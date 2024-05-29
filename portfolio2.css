@@ -1,0 +1,429 @@
+/*-----html-----*/
+
+html{
+    overflow-x: hidden;
+    font-family: monospace;
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+
+
+    /*  bg  */
+    
+    /*
+    background-image: url(./3d_cubes.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    */
+
+
+    /*
+    background-image: url(./ligne_infini.png);
+    background-repeat: repeat-y;
+    background-size: 100%;
+
+    */
+
+    background-color: #262b3a;
+    
+}
+
+
+body > img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -10;
+}
+
+
+
+
+
+/*----- BACKGROUND -----*/
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+   }
+    100% {
+        transform: rotate(360deg);
+   }
+}
+.gradient {
+opacity: 0;
+
+    position: fixed;
+    padding:10px;
+    margin: 5% auto;
+    left: 0;
+    right: 0;
+
+    z-index: -2;
+    --size: 750px;
+    --speed: 20s;
+    --easing: cubic-bezier(0.8, 0.5, 0.5, 0.8);
+    width: var(--size);
+    height: var(--size);
+    filter: blur(calc(var(--size) / 5));
+    background-image: linear-gradient(#0048ff, #7befd0);
+    
+    animation: rotate var(--speed) var(--easing) alternate infinite;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+@media (min-width: 720px) {
+    .gradient {
+        --size: 450px;
+   }
+}
+
+
+.gradient {
+    transition: all 1s ease-out;
+}
+
+.gradient.active {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+/*-----header-----*/
+
+header{
+    display: flex;
+    flex-direction: row;
+}
+
+h1 a{
+    color: #b1bbec;
+    padding: 20px 0 20px 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    font-weight: bolder;
+    z-index: 2;
+    font-size: 1.5vw;
+    
+}
+
+
+
+nav{
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: inline-block;
+    flex-direction: row;
+    width: 100%;
+    
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+
+    transition-duration: 150ms;
+    z-index: 1;
+    
+}
+
+nav:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transition-duration: 150ms;
+}
+
+nav > a {
+    color: #e8d7bc;
+    margin: 0 2vw 0 2vw;
+    text-decoration: none;
+    font-size: 1.5vw;
+    display: inline-block;
+    transition-duration: 150ms;
+
+}
+
+
+nav > a:hover {
+    color: #ffffe9;
+    transition-duration: 150ms;
+
+}
+
+
+
+
+
+
+/*-----main-----*/
+
+main{
+    margin: 0;
+    padding: 0;
+
+    
+}
+
+h2{
+    font-size: 4vw;
+    text-align: center;
+    color: #ffffe9;
+    
+}
+
+/*  container utilisé dans .competences et .travaux */
+.container{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 2vw;
+}
+
+
+
+
+
+/*    home    */
+
+.home{
+    display: flex;
+    flex-direction: column;
+    height: 50vw;
+    align-items: center;
+    justify-content: center;
+    background-size: 100%;
+}
+
+.home > h2{
+    font-size: 5vw;
+    text-align: center;
+    color: #ffffe9;
+    margin-bottom: 0;
+}
+
+.home > p{
+    font-size: 2vw;
+    color: #e8d7bc;
+
+}
+
+.home > a{
+    text-decoration: none;
+    color: #ffffe9;
+    font-size: 30px;
+    transition-duration: 200ms;
+}
+
+.home > a:hover{
+    color: white;
+    text-shadow: 0px 0px 10px white;
+    font-size: 40px;
+}
+
+
+.scroll-down-arrow {
+    position: absolute;
+    top: 80vh; /* Ajuste la position verticale selon tes préférences */
+    left: 50%; /* Place la flèche au centre horizontalement */
+    transform: translateX(-50%);
+    width: 40px; /* Largeur de la flèche */
+    height: 40px; /* Hauteur de la flèche */
+    border: 2px solid #ffffe9; /* Couleur et épaisseur de la bordure */
+    border-radius: 50%; /* Forme circulaire */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    animation: arrow-bounce 2s infinite; /* Animation de rebondissement */
+}
+
+.scroll-down-arrow span {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent; /* Taille et couleur de la flèche */
+    border-right: 8px solid transparent; /* Taille et couleur de la flèche */
+    border-top: 12px solid #ffffe9; /* Taille et couleur de la flèche */
+}
+
+@keyframes arrow-bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(10px); /* Hauteur de rebond */
+    }
+    60% {
+        transform: translateY(5px); /* Hauteur de rebond */
+    }
+}
+
+
+
+/*   competences   */
+
+
+.competences{
+    height: 50vw;
+    padding-top: 4vw;
+}
+
+
+.comp{
+    height: 12vw;
+    width: 15vw;
+    transition-duration: 200ms;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*  couleurs bordures competences */
+.comp:nth-child(1){
+    border: solid #98d9fe 0.4vw;
+}
+.comp:nth-child(2){
+    border: solid #efbaff 0.4vw;
+}
+.comp:nth-child(3){
+    border: solid #c0ffba 0.4vw;
+}
+.comp:nth-child(4){
+    border: solid #ffefba 0.4vw;
+}
+
+
+
+.comp h3{
+    font-size: 2.5vw;
+    color: #e8d7bc;
+    text-align: left;
+    margin: 2vw 0 1vw 0;
+}
+
+.comp ul{
+    width: inherit;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+.comp li {
+    color: white;
+    width: inherit;
+    font-size: 1.25vw;
+}
+
+.comp:hover{
+    height: 13vw;
+    width: 16vw;
+    border: solid white 2px;
+    background-color: rgba(0, 0, 0, 1);
+    transition-duration: 200ms;
+}
+
+
+.competences > p{
+    font-size: 1.5vw;
+    color: #e8d7bc;
+    text-align: center;
+}
+
+
+
+/*   travaux   */
+
+.travaux{
+    height: fit-content;
+    padding-top: 4vw;
+    padding-bottom: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.trav{
+    border: solid #b1bbec 5px;
+    margin-bottom: 1vw;
+    width: 17vw;
+    height: 17vw;
+    position: relative;
+    transition-duration: 100ms;
+}
+
+.travaux .container{
+    flex-wrap: wrap;
+    width: 70vw;
+    height: fit-content;
+}
+
+.trav h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #b1bbec;
+    font-size: 1vw;
+    margin: 0;
+}
+
+.trav:hover{
+    background-color: #b1bbec;
+    transition-duration: 200ms;
+}
+
+.trav:hover h3{
+    color: black;
+}
+
+
+
+
+/*   contact   */
+
+.contact{
+    height: fit-content;
+    padding-top: 4vw;
+    padding-bottom: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10vh;
+}
+
+.liens{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.liens a{
+    text-decoration: none;
+    color: #e8d7bc;
+    font-size: 1.25vw;
+    margin: 1vw;
+}
+
+.liens a:hover{
+    color: white;
+}
+
+/*-----footer-----*/
+
+
+footer{
+    width: 100%;
+    height: 1vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    color: #e8d7bc;
+    text-align: center;
+}
