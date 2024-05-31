@@ -1,0 +1,82 @@
+/*-----html-----*/
+
+html{
+    overflow-x: hidden;
+    font-family: monospace;
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    
+    background-color: #262b3a;
+    
+}
+
+
+
+/*-----header-----*/
+
+
+header a{
+    text-decoration: none;
+    width: fit-content;
+    font-size: 1.5vw;
+    margin-left: 2vw;
+    margin-top: 10px;
+    padding: 10px;
+    color: #e8d7bc;
+    border: solid #e8d7bc 3px;
+    transition: 500ms;
+    display: block;
+    
+}
+
+header a:hover{
+    color: #262b3a;
+    background-color: #e8d7bc;
+    transition: 200ms;
+}
+
+
+/*-----main-----*/
+
+/* section */
+
+main .container{
+    border: solid #53baff 5px;
+    border-top-right-radius: 2vw;
+    margin: 2vw;
+    height: fit-content;
+}
+
+main h2{
+    font-size: 3vw;
+    color: #e8d7bc;
+    margin: 11px;
+}
+
+main p {
+    color: #ffffe9;
+    font-size: 20px;
+    margin: 30px;
+    text-align: justify;
+}
+
+
+
+
+/*-----footer-----*/
+
+
+footer{
+    width: 100%;
+    height: 1vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    color: #e8d7bc;
+    text-align: center;
+    
+}

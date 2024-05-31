@@ -11,21 +11,7 @@ body{
     padding: 0;
 
 
-    /*  bg  */
     
-    /*
-    background-image: url(./3d_cubes.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    */
-
-
-    /*
-    background-image: url(./ligne_infini.png);
-    background-repeat: repeat-y;
-    background-size: 100%;
-
-    */
 
     background-color: #262b3a;
     
@@ -275,12 +261,23 @@ h2{
     padding-top: 4vw;
 }
 
+.competences > .container{
+    flex-direction: column;
+    margin-top: 10vw;
+}
+
 
 .comp{
-    height: 17vw;
-    width: 20vw;
+    height: 18vw;
+    width: 96vw;
+    margin-left: 2vw;
+    
+    margin-bottom: 1vw;
     transition-duration: 200ms;
     background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 /*  couleurs bordures competences */
@@ -303,14 +300,19 @@ h2{
     font-size: 2.3vw;
     color: #e8d7bc;
     text-align: left;
+    
     margin: 2vw 0 1vw 0;
+}
+
+.comp h4{
+    color: #98d9fe;
 }
 
 .comp ul{
     width: inherit;
     padding: 0;
     list-style-type: none;
-    text-align: center;
+    text-align: left;
 }
 
 .comp li {
@@ -319,20 +321,14 @@ h2{
     font-size: 1.25vw;
 }
 
-.comp:hover{
-    height: 18vw;
-    width: 21vw;
-    border: solid white 2px;
-    background-color: rgba(0, 0, 0, 1);
-    transition-duration: 200ms;
-}
 
 
-.competences > p{
-    font-size: 1.5vw;
-    color: #e8d7bc;
-    text-align: center;
-}
+
+
+
+
+
+
 
 
 
@@ -349,6 +345,7 @@ h2{
 
 .trav{
     border: solid #b1bbec 5px;
+    background-color: #b1bbec;
     margin-bottom: 1vw;
     width: 17vw;
     height: 17vw;
@@ -366,20 +363,31 @@ h2{
     position: absolute;
     top: 50%;
     left: 50%;
+    
     color: #b1bbec;
     font-size: 1vw;
     margin: 0;
 }
 
-.trav:hover{
-    background-color: #b1bbec;
-    transition-duration: 200ms;
-}
+
 
 .trav:hover h3{
     color: black;
 }
 
+.trav img{
+    object-fit: cover;
+    width: 17vw;
+    height: 17vw;
+    transition: 500ms;
+    
+}
+
+.trav:hover img{
+    opacity: 20%;
+    transition: 500ms;
+
+}
 
 
 
@@ -392,6 +400,7 @@ h2{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-bottom: 10vh;
 }
 
@@ -438,6 +447,7 @@ form button{
     height: 2vw;
     transition: 500ms;
     font-size: 1vw;
+    
 
 }
 
